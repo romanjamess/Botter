@@ -10,8 +10,8 @@ const server = new ApolloServer({
     typeDefs
 })
 // app.use(cors())
-// app.use(express.urlencoded({ extended: false }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 
   const startApolloServer = async () => {
-    // await server.start();
+    await server.start();
     
     db.once('open', () => {
       app.listen(PORT, () => {
