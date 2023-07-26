@@ -1,4 +1,4 @@
-const tacos = require ("./Menu")
+const menu = require ("./Menu")
+const order = require("./Order")
 
-
-module.exports= { tacos }
+module.exports= { menu, order}
